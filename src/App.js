@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ShopList from '../src/components/ShopList';
+import AddProduct from '../src/components/AddProduct';
+import Chart from '../src/components/Chart';
+import ShopListContextProvider from '../src/contexts/ShopListContext'
+import './App.css'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ShopListContextProvider> 
+        <div className="left-col">
+          <div className="left-col-components">  
+            <AddProduct />   
+            <Chart />
+          </div>
+        </div>
+        <div className="right-col">
+          <ShopList />
+        </div>  
+      </ShopListContextProvider>  
     </div>
-  );
+  )
 }
 
 export default App;
